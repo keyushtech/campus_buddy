@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2>Campus Marketplace</h2>
+</div>
+
+<div class="grid">
+    {% for listing in listings %}
+        <div class="card">
+            <h3>{{ listing.title }}</h3>
+            <p class="price">₹{{ listing.price }}</p>
+            <p>{{ listing.description }}</p>
+            <p><strong>📞 Contact:</strong> {{ listing.seller_contact }}</p>
+            <div class="meta">
+                Listed on {{ listing.date_posted|date:"M d, Y" }}
+            </div>
+        </div>
+    {% empty %}
+        <p>No listings available yet. Be the first to sell something!</p>
+    {% endfor %}
+</div>
+{% endblock %}
