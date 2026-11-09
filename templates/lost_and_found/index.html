@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2>Lost & Found Feed</h2>
+</div>
+
+<div class="grid">
+    {% for item in items %}
+        <div class="card">
+            <span class="badge {% if item.category == 'LOST' %}badge-lost{% else %}badge-found{% endif %}">
+                {{ item.get_category_display }}
+            </span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            <p><strong>📍 Location:</strong> {{ item.location }}</p>
+            <p><strong>📞 Contact:</strong> {{ item.contact }}</p>
+            <div class="meta">
+                Posted on {{ item.date_posted|date:"M d, Y" }}
+            </div>
+        </div>
+    {% empty %}
+        <p>No items reported yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
