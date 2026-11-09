@@ -4,7 +4,7 @@ from .forms import LostItemForm
 
 def index(request):
     if request.method == 'POST':
-        form = LostItemForm(request.POST)
+        form = LostItemForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('lost_and_found_index')
