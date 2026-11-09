@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Complaint
+from .models import Complaint,Announcement
 
 
 @admin.register(Complaint)
@@ -15,3 +15,10 @@ class ComplaintAdmin(admin.ModelAdmin):
     ordering = ('-date_filed',)
 
     readonly_fields = ('date_filed',)
+
+@admin.register(Announcement)
+class AnnouncementAdmin(admin.ModelAdmin):
+    list_display = ('title', 'category', 'posted_by', 'is_active', 'date_posted')
+    list_filter = ('category', 'is_active', 'date_posted')
+    list_editable = ('is_active',)
+    search_fields = ('title', 'content', 'posted_by')

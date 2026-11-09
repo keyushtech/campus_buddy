@@ -1,15 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="text-align: center; padding: 3rem 1rem;">
-    <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">Welcome to Campus Buddy</h1>
-    <p style="font-size: 1.1rem; color: #475569; max-width: 600px; margin: 0 auto 2rem auto;">
-        The one-stop campus hub to find misplaced items or buy and sell essentials from your peers.
+<!-- Hero Section -->
+<div style="text-align: center; padding: 2.5rem 1rem 2rem 1rem;">
+    <h1 style="font-size: 2.25rem; margin-bottom: 0.75rem; color: #0f172a;">Welcome to Campus Buddy</h1>
+    <p style="font-size: 1.05rem; color: #475569; max-width: 620px; margin: 0 auto 1.75rem auto; line-height: 1.5;">
+        The all-in-one portal to recover lost belongings, trade items peer-to-peer, and log hostel & campus maintenance issues.
     </p>
 
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/lost-and-found/" style="background: #2563eb; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Lost & Found Feed</a>
-        <a href="/marketplace/" style="background: #16a34a; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Marketplace Listings</a>
+    <!-- Navigation Action Buttons -->
+    <div style="display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/lost-and-found/" style="background: #2563eb; color: white; padding: 0.7rem 1.35rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+            🔍 Lost & Found
+        </a>
+        <a href="/marketplace/" style="background: #16a34a; color: white; padding: 0.7rem 1.35rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+            🏷️ Marketplace
+        </a>
+        <a href="/complaints/" style="background: #dc2626; color: white; padding: 0.7rem 1.35rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+            🛠️ File Complaint
+        </a>
+    </div>
+</div>
+
+<hr style="border: none; border-top: 1px solid #e2e8f0; margin: 2rem 0;">
+
+<!-- Announcements & Noticeboard -->
+<div style="margin-top: 1.5rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.4rem; color: #0f172a;">📢 Campus Noticeboard</h2>
+        <span style="font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.6rem; border-radius: 9999px; font-weight: 600;">Live Feed</span>
+    </div>
+
+    <div class="grid" style="margin-top: 1rem;">
+        {% for a in announcements %}
+            <div class="card" style="border-left: 4px solid #2563eb;">
+                <span class="badge" style="background: #eff6ff; color: #1d4ed8;">{{ a.get_category_display }}</span>
+                <h3>{{ a.title }}</h3>
+                <p>{{ a.content }}</p>
+                <div class="meta">Posted by {{ a.posted_by }} • {{ a.date_posted|date:"M d, Y" }}</div>
+            </div>
+        {% empty %}
+            <div class="card" style="grid-column: 1 / -1; text-align: center; color: #64748b; padding: 2rem;">
+                No active announcements at the moment.
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
