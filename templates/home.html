@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="text-align: center; padding: 3rem 1rem;">
+    <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">Welcome to Campus Buddy</h1>
+    <p style="font-size: 1.1rem; color: #475569; max-width: 600px; margin: 0 auto 2rem auto;">
+        The one-stop campus hub to find misplaced items or buy and sell essentials from your peers.
+    </p>
+
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/lost-and-found/" style="background: #2563eb; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Lost & Found Feed</a>
+        <a href="/marketplace/" style="background: #16a34a; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Marketplace Listings</a>
+    </div>
+</div>
+{% endblock %}
