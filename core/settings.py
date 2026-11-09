@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lost_and_found',
     'marketplace',
+    'complaints',
 ]
 
 MIDDLEWARE = [

@@ -7,4 +7,5 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('lost-and-found/', include('lost_and_found.urls')),
     path('marketplace/', include('marketplace.urls')),
+    path('complaints/', include('complaints.urls')),
 ]

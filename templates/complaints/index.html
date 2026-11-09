@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+    <h2>Campus Maintenance & Grievance Tracker</h2>
+</div>
+
+<!-- Complaint Form -->
+<div class="card" style="margin-bottom: 2rem;">
+    <h3>Submit a Maintenance Issue</h3>
+    <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Report hostel room repairs, academic lab fixtures, Wi-Fi issues, or common area maintenance.</p>
+    <form method="POST" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="background: #dc2626; color: white; border: none; padding: 0.65rem 1.25rem; border-radius: 6px; font-weight: 600; cursor: pointer; align-self: flex-start;">
+            File Complaint
+        </button>
+    </form>
+</div>
+
+<h3>Live Campus Tickets</h3>
+<div class="grid">
+    {% for c in complaints %}
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="badge badge-category">{{ c.get_category_display }}</span>
+                <span class="badge {% if c.status == 'RESOLVED' %}badge-resolved{% elif c.status == 'IN_PROGRESS' %}badge-progress{% else %}badge-pending{% endif %}">
+                    {{ c.get_status_display }}
+                </span>
+            </div>
+            <h3>{{ c.title }}</h3>
+            <p>{{ c.description }}</p>
+            <p><strong>📍 Location:</strong> {{ c.location_details }}</p>
+            <p><strong>👤 Filed By:</strong> {{ c.student_contact }}</p>
+            <div class="meta">
+                Ticket #{{ c.id }} • Filed on {{ c.date_filed|date:"M d, Y" }}
+            </div>
+        </div>
+    {% empty %}
+        <p>No complaints reported. All systems running smooth!</p>
+    {% endfor %}
+</div>
+{% endblock %}
