@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Buddy</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">🎓 Campus Buddy</a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/lost-and-found/">Lost & Found</a>
+                <a href="/marketplace/">Marketplace</a>
+                <a href="/admin/" class="admin-link">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Campus Buddy | Built for Campus Life</p>
+    </footer>
+</body>
+</html>
