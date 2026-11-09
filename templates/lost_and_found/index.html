@@ -1,10 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
     <h2>Lost & Found Feed</h2>
 </div>
 
+<!-- Submission Form -->
+<div class="card" style="margin-bottom: 2rem;">
+    <h3>Report an Item</h3>
+    <form method="POST" style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="background: #2563eb; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; align-self: flex-start;">
+            Submit Report
+        </button>
+    </form>
+</div>
+
+<h3>Recent Reports</h3>
 <div class="grid">
     {% for item in items %}
         <div class="card">
