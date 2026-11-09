@@ -4,7 +4,7 @@ from .forms import ListingForm
 
 def index(request):
     if request.method == 'POST':
-        form = ListingForm(request.POST)
+        form = ListingForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('marketplace_index')
