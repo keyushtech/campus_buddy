@@ -2,6 +2,8 @@
 
 A lightweight campus portal built with Django to handle daily student utilities—tracking lost & found items, peer-to-peer marketplace listings, and maintenance complaints across hostels and campus departments.
 
+**Live Deployment**: [https://campus-buddy-zl7n.onrender.com](https://campus-buddy-zl7n.onrender.com)
+
 ---
 
 ## What It Does
@@ -91,7 +93,7 @@ Open your browser and navigate to:
 
 | Contributor | Role | Module Coverage |
 |---|---|---|
-| **Keyush** | Lead / Architecture | Project scaffolding, core URL routing, settings, admin setup, announcement data models & dynamic home view |
-| **Manohar** | UI/UX & Grievance Lead | Responsive design system, base layout, complaints module (models, views, forms, filters, and admin dashboard) |
+| **Keyush** | Frontend & UI/UX Lead | Responsive CSS design system, shared base layout templates, component styling, and frontend polish across all portal views |
+| **Manohar** | Backend Architecture & Grievance Lead | Project scaffolding, core URL routing, Django settings, admin setup, notice/announcement models, dynamic home page, and the complaints module (models, forms, filters, and admin dashboard) |
 | **Lavanya** | Module Lead (Lost & Found) | Lost & found data models, image upload handling, feeds, and post submission forms |
 | **Vaishnavi** | Module Lead (Marketplace) | Marketplace listing models, image uploads, price displays, views, and routing |
