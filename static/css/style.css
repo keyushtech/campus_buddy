@@ -93,7 +93,7 @@ body {
   font-size: 0.85rem;
 }
 
-/* Card & Grid Layout for Items */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -149,12 +149,11 @@ body {
 }
 
 .price {
-  font-size: 1.15rem;
   font-weight: 700;
-  color: #16a34a;
   margin: 0.5rem 0;
 }
-/* Form Controls & Labels */
+
+
 form p {
   display: flex;
   flex-direction: column;
@@ -189,14 +188,13 @@ form select:focus,
 form textarea:focus {
   outline: none;
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 form textarea {
   resize: vertical;
 }
 
-.helptext {
+.helptext { /*check*/
   font-size: 0.75rem;
   color: #64748b;
 }
@@ -220,3 +218,32 @@ form textarea {
   background-color: #dcfce7;
   color: #15803d;
 }
+
+.hero-btn {
+  display: inline-block;
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 0.7rem 1.35rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-blue { background-color: #2563eb; }
+.btn-blue:hover { box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35); }
+
+.btn-green { background-color: #16a34a; }
+.btn-green:hover { box-shadow: 0 10px 20px rgba(22, 163, 74, 0.35); }
+
+.btn-red { background-color: #dc2626; }
+.btn-red:hover { box-shadow: 0 10px 20px rgba(220, 38, 38, 0.35); }
+

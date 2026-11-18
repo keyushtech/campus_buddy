@@ -1,30 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Hero Section -->
+
 <div style="text-align: center; padding: 2.5rem 1rem 2rem 1rem;">
     <h1 style="font-size: 2.25rem; margin-bottom: 0.75rem; color: #0f172a;">Welcome to Campus Buddy</h1>
     <p style="font-size: 1.05rem; color: #475569; max-width: 620px; margin: 0 auto 1.75rem auto; line-height: 1.5;">
         The all-in-one portal to recover lost belongings, trade items peer-to-peer, and log hostel & campus maintenance issues.
     </p>
 
-    <!-- Navigation Action Buttons -->
+
     <div style="display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/lost-and-found/" style="background: #2563eb; color: white; padding: 0.7rem 1.35rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-            🔍 Lost & Found
-        </a>
-        <a href="/marketplace/" style="background: #16a34a; color: white; padding: 0.7rem 1.35rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-            🏷️ Marketplace
-        </a>
-        <a href="/complaints/" style="background: #dc2626; color: white; padding: 0.7rem 1.35rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-            🛠️ File Complaint
-        </a>
+    <a href="/lost-and-found/" class="hero-btn btn-blue">🔍 Lost & Found</a>
+    <a href="/marketplace/" class="hero-btn btn-green">🏷️ Marketplace</a>
+    <a href="/complaints/" class="hero-btn btn-red">🛠️ File Complaint</a>
     </div>
 </div>
 
 <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 2rem 0;">
 
-<!-- Announcements & Noticeboard -->
+
 <div style="margin-top: 1.5rem;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
         <h2 style="font-size: 1.4rem; color: #0f172a;">📢 Campus Noticeboard</h2>

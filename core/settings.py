@@ -31,15 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'lost_and_found',
-    'marketplace',
-    'complaints',
+    'lost_and_found', # We added this
+    'marketplace', # We added this
+    'complaints', # We added this
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],  # We added this
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,9 +120,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+STATICFILES_DIRS = [  # We added this
+    BASE_DIR / 'static',  # We added this
+] # We added this
 
 
 
@@ -134,5 +135,31 @@ MAILERS = {
     },
 }
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'    # We added this
+MEDIA_ROOT = BASE_DIR / 'media'    # We added this
+
+JAZZMIN_SETTINGS = {   # We added this
+    "site_title": "Campus Buddy Admin",
+    "site_header": "Campus Buddy",
+    "site_brand": "Campus Buddy",
+    "site_logo": "images/logo.jpeg",
+    "login_logo": "images/logo.jpeg",
+    "welcome_sign": "Welcome to the Campus Buddy Admin Portal",
+    "copyright": "IIT Bhilai — Campus Buddy",
+    "search_model": ["auth.User", "complaints.Complaint", "marketplace.Listing", "lost_and_found.LostItem"],
+    "topmenu_links": [
+        {"name": "View Live Site", "url": "/", "new_window": True},
+    ],
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "complaints.Complaint": "fas fa-exclamation-circle",
+        "complaints.Announcement": "fas fa-bullhorn",
+        "lost_and_found.LostItem": "fas fa-search",
+        "marketplace.Listing": "fas fa-store",
+    },
+    "default_icon_parents": "fas fa-folder",
+    "default_icon_children": "fas fa-circle",
+    "show_ui_builder": False,
+}

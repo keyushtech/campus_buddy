@@ -5,13 +5,12 @@
     <h2>Campus Marketplace</h2>
 </div>
 
-<!-- Listing Submission Form -->
 <div class="card" style="margin-bottom: 2rem;">
     <h3>Create a Listing</h3>
     <form method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" style="background: #16a34a; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; align-self: flex-start;">
+        <button type="submit" class="hero-btn btn-green">
             Post Listing
         </button>
     </form>
