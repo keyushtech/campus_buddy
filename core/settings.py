@@ -145,6 +145,7 @@ JAZZMIN_SETTINGS = {   # We added this
     "site_logo": "images/logo.jpeg",
     "login_logo": "images/logo.jpeg",
     "welcome_sign": "Welcome to the Campus Buddy Admin Portal",
+    "custom_css": "css/style.css",
     "copyright": "IIT Bhilai — Campus Buddy",
     "search_model": ["auth.User", "complaints.Complaint", "marketplace.Listing", "lost_and_found.LostItem"],
     "topmenu_links": [

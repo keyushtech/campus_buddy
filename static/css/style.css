@@ -247,3 +247,8 @@ form textarea {
 .btn-red { background-color: #dc2626; }
 .btn-red:hover { box-shadow: 0 10px 20px rgba(220, 38, 38, 0.35); }
 
+.login-logo img {
+  max-width: 110px;
+  height: auto;
+  border-radius: 16px;
+}
